@@ -1,41 +1,47 @@
-<<<<<<< HEAD
-# NextjsBlog
-基于Nextjs的个人博客搭建
-=======
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# 🚀 我的个人博客 (Next.js Blog)
 
-## Getting Started
+这是一个基于 **Next.js** 构建的个人博客项目。项目旨在记录WNN的日常及总结记录。
+## 🌟 项目亮点
 
-First, run the development server:
+ **框架**: 使用 Next.js 14/15 (App Router) 构建，支持服务器组件 (RSC)。  
+ **样式**: 集成了 Tailwind CSS (基于 `postcss.config.mjs`)。  
+ **性能**: 静态页面生成 (SSG) 确保极速加载。  
+ **自定义图像压缩脚本**: 通过 `compress.js` 利用 `Sharp` 库自动将图片转换为 WebP 格式，大幅减少首屏带宽。  
+ **类型安全**: 全面使用 TypeScript 编写。
 
+## 🛠️ 技术栈
+
+- **Core**: Next.js, React, TypeScript
+- **Styling**: Tailwind CSS, PostCSS, Motion-primitives
+- **Tools**: ESLint, Sharp (图像处理)
+
+## 📦 快速开始
+
+### 1. 克隆并安装依赖
 ```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+git clone [https://github.com/WNN6231/NextjsBlog.git](https://github.com/WNN6231/NextjsBlog.git)
+cd blog
+npm install
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+### 2. 运行图片优化脚本
+在部署或上传新图片后，运行此脚本将 public 目录下的 JPG/PNG 自动转换为高效的 WebP 格式：
+```bash
+node compress.js
+```
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+### 3.启动开发服务器
+```bash
+npm run dev
+```
+点击终端显示的http://localhost:3000查看博客内容。
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+## 📁 目录结构
+/app: 博客页面路由与逻辑。  
+/public: 静态资源（图片、字体等）。  
+/public/optimized: 经过 compress.js 处理后的优化图片。  
+/lib: 公用工具函数与库配置。  
+compress.js: 自定义图片压缩工具。
 
-## Learn More
-
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
->>>>>>> feaf77c (Initial commit from Create Next App)
+---
+Made with ❤️ by WNN
