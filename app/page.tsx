@@ -17,6 +17,7 @@ import { TiltCard3 } from "./components/TiltCard3";
 import { TiltCard4 } from "./components/TiltCard4";
 import { TiltCard5 } from "./components/TiltCard5";
 import { TiltCard6 } from "./components/TiltCard6";
+import Sakana from './components/Sakana';
 
 export default function HomePage() {
   return (
@@ -159,7 +160,9 @@ export default function HomePage() {
             <AnimatedCardBackgroundHover />
           </div>
 
-          
+          <div>
+            <Sakana />
+          </div>
           
         </main>
       </div>
