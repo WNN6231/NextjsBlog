@@ -33,6 +33,7 @@ export default function InViewImagesGrid() {
           {/* 使用 columns 布局时，确保图片有 margin 撑开 */}
           <div className='columns-2 gap-4 px-4 sm:columns-3 lg:columns-4'>
             {[
+              '0.webp',
               '1.webp',
               '2.webp',
               '3.webp',
