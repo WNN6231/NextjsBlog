@@ -11,12 +11,7 @@ import { TextLoop } from './components/core/text-loop';
 import { Clock } from './components/Clock';
 import { SocialLinks } from "./components/SocialLinks";
 import { JourenyItem } from "./components/JourenyItem";
-import { TiltCard1 } from "./components/TiltCard1";
-import { TiltCard2 } from "./components/TiltCard2";
-import { TiltCard3 } from "./components/TiltCard3";
-import { TiltCard4 } from "./components/TiltCard4";
-import { TiltCard5 } from "./components/TiltCard5";
-import { TiltCard6 } from "./components/TiltCard6";
+import { TiltCard, CARDS } from "./components/TiltCard";
 import Sakana from './components/Sakana';
 
 export default function HomePage() {
@@ -146,13 +141,15 @@ export default function HomePage() {
           </div>
 
           
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-7xl mx-auto my-30">
-            <TiltCard1 />
-            <TiltCard2 />
-            <TiltCard3 />
-            <TiltCard4 />
-            <TiltCard5 />
-            <TiltCard6 />
+          <div className="my-30 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            {CARDS.map((card) => (
+              <TiltCard 
+                key={card.id} 
+                imageSrc={card.image} 
+                title={card.title} 
+                author={card.author} 
+              />
+            ))}
           </div>
 
           <div>
