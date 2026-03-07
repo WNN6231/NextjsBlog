@@ -1,24 +1,24 @@
 {
   "main": {
-    "id": "9a98b816fb3f42f1",
+    "id": "9c33a313c3ed8e1f",
     "type": "split",
     "children": [
       {
-        "id": "368a5063bab23621",
+        "id": "e3c3bc5bc550c57c",
         "type": "tabs",
         "children": [
           {
-            "id": "6c5d871cbc23cc24",
+            "id": "67e03c3af0d1f7bf",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "posts/Hello-world.md",
+                "file": "content/posts/my-trip.md",
                 "mode": "source",
-                "source": true
+                "source": false
               },
               "icon": "lucide-file",
-              "title": "Hello-world"
+              "title": "my-trip"
             }
           }
         ]
@@ -27,15 +27,15 @@
     "direction": "vertical"
   },
   "left": {
-    "id": "196163e7e69b3e4f",
+    "id": "0ea4eeac4a48762c",
     "type": "split",
     "children": [
       {
-        "id": "0e61df915e07000b",
+        "id": "6e6269d68713758a",
         "type": "tabs",
         "children": [
           {
-            "id": "dafe785bef5d7d73",
+            "id": "10ab51019f0349e6",
             "type": "leaf",
             "state": {
               "type": "file-explorer",
@@ -48,7 +48,7 @@
             }
           },
           {
-            "id": "d6e303b878009f28",
+            "id": "2036c837ad8459f0",
             "type": "leaf",
             "state": {
               "type": "search",
@@ -65,7 +65,7 @@
             }
           },
           {
-            "id": "0a8abdb750f8bd42",
+            "id": "c0a0390e129d0d6b",
             "type": "leaf",
             "state": {
               "type": "bookmarks",
@@ -81,20 +81,20 @@
     "width": 300
   },
   "right": {
-    "id": "0d97276edb1a39e8",
+    "id": "d201303b4a09dad8",
     "type": "split",
     "children": [
       {
-        "id": "de57e33173b40709",
+        "id": "f9ff23218d336bc5",
         "type": "tabs",
         "children": [
           {
-            "id": "e18ac8206b385adc",
+            "id": "b07e18a0516a4171",
             "type": "leaf",
             "state": {
               "type": "backlink",
               "state": {
-                "file": "posts/Hello-world.md",
+                "file": "content/posts/my-trip.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -104,25 +104,25 @@
                 "unlinkedCollapsed": true
               },
               "icon": "links-coming-in",
-              "title": "Hello-world 的反向链接列表"
+              "title": "my-trip 的反向链接列表"
             }
           },
           {
-            "id": "33f482f772b59cd5",
+            "id": "4d1ab28263b82537",
             "type": "leaf",
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "posts/hello-world.md",
+                "file": "content/posts/my-trip.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               },
               "icon": "links-going-out",
-              "title": "hello-world 的出链列表"
+              "title": "my-trip 的出链列表"
             }
           },
           {
-            "id": "5e994869b35824a8",
+            "id": "77418eae99d9053b",
             "type": "leaf",
             "state": {
               "type": "tag",
@@ -137,7 +137,7 @@
             }
           },
           {
-            "id": "e9324fe019b4bf41",
+            "id": "8089d8ac9718089b",
             "type": "leaf",
             "state": {
               "type": "all-properties",
@@ -151,18 +151,18 @@
             }
           },
           {
-            "id": "d88e235d68b1676a",
+            "id": "98b42dbee2f4fbd6",
             "type": "leaf",
             "state": {
               "type": "outline",
               "state": {
-                "file": "posts/hello-world.md",
+                "file": "content/posts/my-trip.md",
                 "followCursor": false,
                 "showSearch": false,
                 "searchQuery": ""
               },
               "icon": "lucide-list",
-              "title": "hello-world 的大纲"
+              "title": "my-trip 的大纲"
             }
           }
         ]
@@ -183,23 +183,9 @@
       "bases:新建数据库": false
     }
   },
-  "active": "6c5d871cbc23cc24",
+  "active": "10ab51019f0349e6",
   "lastOpenFiles": [
-    "PostImages/Pasted image 20260307120358.png",
-    "Pasted image 20260307120321.png",
-    "posts/Hello-world.md",
-    "PostImages",
-    "12646bb518447ed65cb388bd73eb363e.png",
-    "postsImAGE/12646bb518447ed65cb388bd73eb363e.png",
-    "postsImAGE",
-    "posts/12646bb518447ed65cb388bd73eb363e.png",
-    "public/PostImages/ENDFIELD_SHARE_1769322787.png",
-    "public/PostImages",
-    "public",
-    "posts/ENDFIELD_SHARE_1769322787.png",
-    "posts/image.png",
-    "posts/my-trip.md",
-    "posts/你好世界.md",
-    "未命名.md"
+    "content/posts/Hello-world.md",
+    "README.md"
   ]
 }
