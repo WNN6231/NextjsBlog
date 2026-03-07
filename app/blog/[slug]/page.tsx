@@ -2,46 +2,40 @@ import fs from 'fs';
 import path from 'path';
 import matter from 'gray-matter';
 import { MDXRemote } from 'next-mdx-remote/rsc';
+import { notFound } from 'next/navigation';
 
-// 1. 获取所有文章的 slug 用于静态生成
-export async function generateStaticParams() {
-  const postsDirectory = path.join(process.cwd(), 'content/posts');
-  const files = fs.readdirSync(postsDirectory);
-  return files.map((file) => ({
-    slug: file.replace(/\.md$/, ''),
-  }));
-}
-
-export default async function PostPage({ params }: { params: { slug: string } }) {
-  const { slug } = params;
+export default async function PostPage({ params }: { params: Promise<{ slug: string }> }) {
+  // 关键：必须 await params
+  const { slug } = await params;
+  
   const fullPath = path.join(process.cwd(), 'content/posts', `${slug}.md`);
-  const fileContents = fs.readFileSync(fullPath, 'utf8');
 
-  // 解析元数据和正文
+  if (!fs.existsSync(fullPath)) return notFound();
+
+  const fileContents = fs.readFileSync(fullPath, 'utf8');
   const { data, content } = matter(fileContents);
 
   return (
-    <article className="max-w-3xl mx-auto p-6 lg:py-12">
-      {/* iOS 风格大标题和封面 */}
-      <header className="mb-8">
-        <h1 className="text-4xl font-extrabold text-gray-900 mb-4">{data.title}</h1>
-        <div className="flex items-center text-gray-500 text-sm mb-6">
-          <span>{data.date}</span>
-          <span className="mx-2">•</span>
-          <span>{data.tags?.join(', ')}</span>
-        </div>
+    <article className="max-w-3xl mx-auto py-20 px-6 min-h-screen text-gray-100 bg-black">
+      <header className="mb-12">
+        <h1 className="text-4xl md:text-6xl font-black mb-6 tracking-tighter">
+          {data.title}
+        </h1>
+        <p className="text-gray-500 font-mono mb-8 italic">Published on {data.date}</p>
         {data.cover && (
-          <img 
-            src={data.cover} 
-            alt={data.title} 
-            className="w-full rounded-3xl shadow-lg object-cover max-h-[400px]"
-          />
+          <div className="rounded-[2.5rem] overflow-hidden border border-white/10 shadow-2xl">
+            <img src={data.cover} alt={data.title} className="w-full h-auto object-cover" />
+          </div>
         )}
       </header>
 
-      {/* 文章正文渲染 */}
-      <div className="prose prose-lg prose-slate max-w-none">
+      {/* 使用 prose-invert 渲染深色模式 Markdown */}
+      <div className="prose prose-invert prose-lg max-w-none">
         <MDXRemote source={content} />
+      </div>
+
+      <div className="mt-20 pt-10 border-t border-white/10">
+        <Link href="/blog" className="text-blue-500 hover:underline">← Back to Blog</Link>
       </div>
     </article>
   );
