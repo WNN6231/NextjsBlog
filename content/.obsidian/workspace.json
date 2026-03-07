@@ -15,7 +15,7 @@
               "state": {
                 "file": "posts/Hello-world.md",
                 "mode": "source",
-                "source": true
+                "source": false
               },
               "icon": "lucide-file",
               "title": "Hello-world"
@@ -186,8 +186,8 @@
   "active": "6c5d871cbc23cc24",
   "lastOpenFiles": [
     "PostImages/Pasted image 20260307120358.png",
-    "Pasted image 20260307120321.png",
     "posts/Hello-world.md",
+    "Pasted image 20260307120321.png",
     "PostImages",
     "12646bb518447ed65cb388bd73eb363e.png",
     "postsImAGE/12646bb518447ed65cb388bd73eb363e.png",
