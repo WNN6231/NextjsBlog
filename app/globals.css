@@ -1,5 +1,10 @@
 @import "tailwindcss";
 
+@plugin "@tailwindcss/typography";
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
 @variant dark (&:where(.dark, .dark *));
 
 @theme {
@@ -28,5 +33,14 @@ html.dark {
     background-color: var(--background) !important;
     color: var(--foreground) !important;
     transition: background-color 0.3s ease, color 0.3s ease;
+    -webkit-font-smoothing: antialiased;
   }
+
+@layer utiltities {
+  .prose-custom {
+    @apply prose-zinc max-w-none;
+    --tw-prose-body: var(--foreground);
+    --tw-prose-headings: var(--foreground);
+  }
+}
 }

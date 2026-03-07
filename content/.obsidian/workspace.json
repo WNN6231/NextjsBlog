@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "posts/Hello-world.md",
+                "file": "posts/第一篇博客.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "Hello-world"
+              "title": "第一篇博客"
             }
           }
         ]
@@ -185,8 +185,11 @@
   },
   "active": "6c5d871cbc23cc24",
   "lastOpenFiles": [
+    "posts/TEST.md",
+    "PostImages/2.png",
+    "PostImages/1.png",
+    "posts/第一篇博客.md",
     "PostImages/Pasted image 20260307120358.png",
-    "posts/Hello-world.md",
     "Pasted image 20260307120321.png",
     "PostImages",
     "12646bb518447ed65cb388bd73eb363e.png",
@@ -198,7 +201,6 @@
     "public",
     "posts/ENDFIELD_SHARE_1769322787.png",
     "posts/image.png",
-    "posts/my-trip.md",
     "posts/你好世界.md",
     "未命名.md"
   ]
