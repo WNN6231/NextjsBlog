@@ -27,7 +27,7 @@ export default function BlogListPage() {
     .sort((a, b) => (a.date < b.date ? 1 : -1));
 
   return (
-    <div className="min-h-screen bg-[#0d1117] text-gray-300 selection:bg-gray-700">
+    <div className="min-h-screen bg-background text-foreground transition-colors duration-300">
       <main className="max-w-[1000px] mx-auto px-6 py-20">
         
         <TextScramble className='font-sans text-3xl uppercase'>
@@ -37,9 +37,9 @@ export default function BlogListPage() {
         <div className="flex flex-col gap-6">
           {allPosts.map((post) => (
             <Link href={`/blog/${post.slug}`} key={post.slug} className="group block">
-              <div className="flex flex-col md:flex-row p-4 gap-6 rounded-2xl border border-white/5 bg-white/[0.02] transition-colors duration-300 hover:border-white/20 hover:bg-white/[0.04]">
+              <div className="flex flex-col md:flex-row p-4 gap-6 rounded-2xl border border-black/5 dark:border-white/10 bg-white dark:bg-white/[0.02] transition-all duration-300 hover:shadow-lg dark:hover:bg-white/[0.04]">
                 
-                <div className="w-full md:w-[280px] shrink-0 aspect-[16/9] rounded-xl overflow-hidden bg-[#161b22] border border-white/5">
+                <div className="w-full md:w-[280px] shrink-0 aspect-[16/9] rounded-xl overflow-hidden bg-gray-100 dark:bg-[#161b22] border border-black/5 dark:border-white/5">
                   <img 
                     src={post.cover} 
                     alt={post.title} 
@@ -49,17 +49,17 @@ export default function BlogListPage() {
 
                 <div className="flex flex-col flex-1 py-1">
                   
-                  <h2 className="text-xl font-semibold text-gray-100 mb-3 group-hover:text-blue-400 transition-colors">
+                  <h2 className="text-xl font-semibold text-foreground mb-3 group-hover:text-blue-500 transition-colors">
                     {post.title}
                   </h2>
                   
-                  <div className="flex items-center gap-3 text-xs font-mono text-gray-500 mb-4">
+                  <div className="flex items-center gap-3 text-xs font-mono text-gray-500 dark:text-gray-400 mb-4">
                     <span>{post.date}</span>
-                    <span className="text-gray-700">|</span>
+                    <span className="text-gray-300 dark:text-gray-700">|</span>
                     <span className="uppercase tracking-wider">{post.category}</span>
                   </div>
                   
-                  <p className="text-sm text-gray-400 leading-relaxed line-clamp-2">
+                  <p className="text-sm text-gray-400 dark:text-gray-600 leading-relaxed line-clamp-2">
                     {post.description}
                   </p>
                   
