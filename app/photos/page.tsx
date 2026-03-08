@@ -138,6 +138,7 @@ export default function InViewImagesGrid() {
               '102.webp',
               '103.webp',
               '104.webp',
+              '105.webp',
             ].map((imgSrc, index) => (
               <motion.div
                 key={index}
