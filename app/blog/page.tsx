@@ -28,11 +28,13 @@ export default function BlogListPage() {
 
   return (
     <div className="min-h-screen bg-background text-foreground transition-colors duration-300">
-      <main className="max-w-[1000px] mx-auto px-6 py-20">
+      <main className="max-w-[1000px] mx-auto px-6 pt-10 pb-20">
         
-        <TextScramble className='font-sans text-3xl uppercase'>
-            Blog
-        </TextScramble>
+        <div className="mb-10">
+          <TextScramble className='font-sans text-3xl uppercase'>
+            {"Blog\n记录个人所思所想，聊以慰藉浮生。"}
+          </TextScramble>
+        </div>
 
         <div className="flex flex-col gap-6">
           {allPosts.map((post) => (
@@ -59,7 +61,7 @@ export default function BlogListPage() {
                     <span className="uppercase tracking-wider">{post.category}</span>
                   </div>
                   
-                  <p className="text-sm text-gray-400 dark:text-gray-600 leading-relaxed line-clamp-2">
+                  <p className="text-sm text-gray-600 dark:text-gray-300 leading-relaxed line-clamp-2">
                     {post.description}
                   </p>
                   
