@@ -1,46 +1,85 @@
-import fs from 'fs';
-import path from 'path';
-import matter from 'gray-matter';
-import { MDXRemote } from 'next-mdx-remote/rsc';
+import { getPostBySlug } from '@/lib/markdown';
 import { notFound } from 'next/navigation';
-import Link from 'next/link';
-import { GlowEffectButton } from '@/app/components/GlowEffectButton';
+import ReactMarkdown from 'react-markdown';
+import remarkGfm from 'remark-gfm';
+import Image from 'next/image';
 
-export default async function PostPage({ params }: { params: Promise<{ slug: string }> }) {
-  // 关键：必须 await params
-  const { slug } = await params;
+export default async function BlogPostPage({ 
+  params 
+}: { 
+  params: Promise<{ slug: string }>
+}) {
   
-  const fullPath = path.join(process.cwd(), 'content/posts', `${slug}.md`);
+  const { slug } = await params;
+  const post = getPostBySlug(slug);
 
-  if (!fs.existsSync(fullPath)) return notFound();
+  if (!post) {
+    notFound();
+  }
 
-  const fileContents = fs.readFileSync(fullPath, 'utf8');
-  const { data, content } = matter(fileContents);
+  const {
+    title = '无标题',
+    category = 'THINKING',
+    description = '',
+    author = 'Wm1NlkN',
+    date = '3 MAR 2026',
+    readtime = '34 MIN READ',
+  } = post.meta;
 
   return (
-    <article className="max-w-3xl mx-auto py-20 px-6 min-h-screen text-gray-100 bg-black">
-      
-      <nav className="mb-12">
-        <GlowEffectButton />
-      </nav>
-      
-      <header className="mb-12">
-        <h1 className="text-4xl md:text-6xl font-black mb-6 tracking-tighter">
-          {data.title}
-        </h1>
-        <p className="text-gray-500 font-mono mb-8 italic">Published on {data.date?.toString()}</p>
-        {data.cover && (
-          <div className="rounded-[2.5rem] overflow-hidden border border-white/10 shadow-2xl">
-            <img src={data.cover} alt={data.title} className="w-full h-auto object-cover" />
+    <div className="min-h-screen bg-background text-gray-300">
+      <main className="max-w-3xl mx-auto px-6 py-10">
+        <header className="mb-10">
+          <p className="text-blue-500 text-xs font-bold tracking-widest uppercase mb-4">
+            {category}
+          </p>
+          <h1 className="text-4xl font-bold text-gray-100 mb-4">{title}</h1>
+          <p className="text-gray-400 leading-relaxed mb-8">
+            {description}
+          </p>
+          
+          <div className="flex items-center space-x-4">
+            <div className="relative w-10 h-10 overflow-hidden rounded-full border border-gray-800">
+              <Image 
+                src="/avatar.jpg"
+                alt={author}
+                fill
+                className="object-cover"
+                priority
+              />
+            </div>
+
+            <div>
+              <p className="text-gray-200 text-sm font-medium">{author}</p>
+              <p className="text-gray-500 text-xs">{date} · {readtime}</p>
+            </div>
           </div>
-        )}
-      </header>
+        </header>
 
-      {/* 使用 prose-invert 渲染深色模式 Markdown */}
-      <div className="prose prose-invert prose-lg max-w-none">
-        <MDXRemote source={content} />
-      </div>
+        <hr className="border-gray-800 mb-10" />
 
-    </article>
+        <article className="prose prose-invert prose-lg max-w-none">
+          <ReactMarkdown 
+            remarkPlugins={[remarkGfm]}
+            components={{
+              // 自定义图片组件，让图片自适应容器并带有好看的圆角
+              img: ({ node, ...props }) => (
+                <span className="block w-full flex justify-center my-8">
+                  {/* eslint-disable-next-line @next/next/no-img-element */}
+                  <img
+                    {...props}
+                    alt={props.alt || "Blog Image"}
+                    className="rounded-lg max-h-[600px] object-contain bg-gray-800/50"
+                    loading="lazy"
+                  />
+                </span>
+              ),
+            }}
+          >
+            {post.content}
+          </ReactMarkdown>
+        </article>
+      </main>
+    </div>
   );
 }
