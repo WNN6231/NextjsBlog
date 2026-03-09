@@ -9,16 +9,16 @@ const config: Config = {
   theme: {
     extend: {
       fontFamily: {
-        sans: [
-          '"Inter"',
-          '-apple-system',
-          'BlinkMacSystemFont',
-          '"PingFang SC"',       // 苹果设备中文首选
-          '"Hiragino Sans GB"',
-          '"Microsoft YaHei"',   // Windows 设备中文首选
-          '"Noto Sans SC"',
-          'sans-serif',
+        article: [
+          '"Source Han Serif"',
+          '"Noto Serif CJK"',
+          '"Songti SC"',
+          'Georgia',
+          'serif'
         ],
+      },
+      maxWidth: {
+        'prose-narrow': '720px',
       },
       colors: {
         background: "#18181b",

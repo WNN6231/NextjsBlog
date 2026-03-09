@@ -28,7 +28,7 @@ export default async function BlogPostPage({
 
   return (
     <div className="min-h-screen bg-background text-foreground ">
-      <main className="max-w-4xl mx-auto px-6 py-10">
+      <main className="max-w-4xl mx-auto px-6 py-20">
         <header className="mb-10">
           <p className="text-blue-600 dark:text-blue-400 text-xs font-bold tracking-widest uppercase mb-4">
             {category}
@@ -58,7 +58,7 @@ export default async function BlogPostPage({
 
         <hr className="border-gray-200 dark:border-gray-800 mb-10" />
 
-        <article className="prose-custom">
+        <article className="font-family prose-custom">
           <ReactMarkdown 
             remarkPlugins={[remarkGfm]}
             components={{
