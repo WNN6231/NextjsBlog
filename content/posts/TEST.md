@@ -30,3 +30,21 @@ readtime: 5 min read
 
 为了有效检测横向移动，我们首先将输入数据（行业标准的认证日志）转化为一种能表示单次认证事件以及整个网络认证行为的结构。为此，我们构建了一个认证图：节点代表认证实体（机器或用户），边代表认证事件。接着，我们使用无监督的节点嵌入技术，为图中每个节点生成潜在表示。最后，我们在这些节点嵌入上训练一个链接预测算法，并利用该算法在新的认证事件中识别低概率的链接。
 
+```
+<article className="prose-custom">
+          <ReactMarkdown
+            remarkPlugins={[remarkGfm]}
+            components={{
+              img: ({ node, ...props }) => (
+                <span className="block w-full flex justify-center my-8">
+                  <img
+                    {...props}
+                    alt={props.alt || "Blog Image"}
+                    className="rounded-lg max-h-[600px] object-contain bg-gray-100 dark:bg-gray-800/50"
+                    loading="lazy"
+                  />
+                </span>
+              ),
+            }}
+          >
+```
