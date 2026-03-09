@@ -1,9 +1,9 @@
 'use client';
 
 import React from 'react';
-import { motion } from 'motion/react'; // 如果报错，请改为 'framer-motion'
+import { motion } from 'motion/react'; 
 import { TextShimmer } from '@/app/components/core/text-shimmer';
-import { InView } from '@/app/components/core/in-view'; // 假设你已按同样方式下载了 InView
+import { InView } from '@/app/components/core/in-view'; 
 import { Cursor } from '@/app/components/core/cursor';
 import { SpinningTextCustomTransition } from '../components/SpinningTextCustomTransition';
 import { ImageComparisonSpring } from "../components/ImageComparisonSpring"
@@ -12,7 +12,6 @@ export default function AboutPage() {
   return (
     <main className="text-white">
 
-      {/* 第一部分：全屏的滚动引导 */}
       <section className='relative flex h-screen w-full flex-col items-center justify-center snap-start'>
         <motion.div 
           initial={{ opacity: 0, scale: 0.9, y: 20 }}
@@ -20,7 +19,6 @@ export default function AboutPage() {
           transition={{ duration: 0.8, ease: "easeOut" }}
           className='z-10 w-full max-w-2xl px-6'
         >
-          {/* 这里可以放你的标题 */}
         </motion.div>
 
         <motion.div 
@@ -29,7 +27,6 @@ export default function AboutPage() {
           transition={{ delay: 0.5, duration: 1 }}
           className='relative flex h-64 w-full items-center justify-center -mt-60'
         >
-          {/* 1. 背景动画菱形 */}
           <motion.div
             initial={{ rotate: 45 }}
             animate={{ 
@@ -45,7 +42,6 @@ export default function AboutPage() {
             className="absolute h-48 w-48 border border-zinc-500 bg-transparent shadow-[0_0_15px_rgba(113,113,122,0.1)]"
           />
 
-          {/* 2. 前景文字层 (Scramble 效果) */}
           <TextShimmer
             className='z-10 text-sm font-medium uppercase tracking-[0.4em] '
             duration={1.2}
@@ -55,7 +51,6 @@ export default function AboutPage() {
         </motion.div>
       </section>
 
-      {/* 第二部分：内容展示 */}
       <InView
         variants={{
           hidden: { opacity: 0, y: 50, filter: 'blur(8px)' },
@@ -64,16 +59,14 @@ export default function AboutPage() {
         viewOptions={{ margin: '0px 0px -200px 0px' }}
         transition={{ duration: 0.6, ease: 'easeOut' }}
       >
-        <div className='flex min-h-[50vh] flex-col items-center justify-center px-6 text-center pb-100'>
-          <div className="flex flex-col items-center gap-10"> 
+        <div className='flex flex-col items-center justify-center px-6 text-center pb-20'>
+          <div className="flex flex-col items-center gap-10 mt-20"> 
               
-              {/* 标题部分 */}
               <h2 className='text-3xl tracking-[0.2em] font-sans text-zinc-400 dark:text-zinc-100 uppercase'>
               The Silent Shadow
               </h2>
 
-              {/* 诗歌部分 */}
-              <div className='max-w-2xl text-3xl leading-loose text-zinc-400  font-light'>
+              <div className='max-w-2xl text-3xl leading-loose text-zinc-400 font-light'>
               "Between the desire and the spasm,<br />
               Between the potency and the existence,<br />
               Between the essence and the descent,<br />
@@ -110,9 +103,25 @@ export default function AboutPage() {
           </div>
         </div>
 
-        <div className="w-full max-w-none px-0 lg:max-w-8xl lg:mx-auto">
+        {/* =============== 新增的个人介绍区块 =============== */}
+        <div className="flex w-full flex-col items-center justify-center px-46 pt-140 pb-80 text-center">
+          <div className="max-w-2xl">
+            <h3 className="mb-8 text-sm font-medium uppercase tracking-[0.4em] text-zinc-500">
+              Something Else
+            </h3>
+            <p className="text-xl leading-relaxed font-light text-zinc-300">
+              这不是将一生奉献给谁的故事。<br /><br />
+              人生的路不管走到哪里，都只能是自己的路。<br /><br />
+              不管如何抉择，不论觉得这些有多好，或者被多么沉重的事物攀附，<br /><br />
+              全部是我在活着的过程中得到的，<br /><br />
+              属于我的东西。<br />
+            </p>
+          </div>
+        </div>
+        {/* ================================================== */}
+
+        <div className="w-full max-w-none px-0 pb-20 lg:max-w-8xl lg:mx-auto">
           <SpinningTextCustomTransition />
-          <ImageComparisonSpring />
         </div>
       </InView>
       
