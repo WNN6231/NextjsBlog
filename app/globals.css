@@ -29,14 +29,12 @@ html.dark {
 }
 
 @layer base {
-
+  /* 禁用所有过渡效果，避免主题切换闪烁 */
   *, ::before, ::after {
-    transition-property: color, background-color, border-color, text-decoration-color, fill, stroke;
-    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
-    transition-duration: 200ms;
+    transition: none !important;
   }
   
-  /* 禁用选择文本和占位符的过渡，避免不必要的闪烁 */
+  /* 确保伪元素也没有过渡 */
   ::selection,
   ::-moz-selection {
     transition: none !important;
@@ -62,7 +60,24 @@ html.dark {
     --tw-prose-hr: var(--nav-pill-border);
     --tw-prose-quotes: var(--foreground);
     --tw-prose-code: var(--foreground);
-
     --tw-prose-quote-borders: var(--nav-pill-border);
+    
+    /* 明确设置dark模式下的加粗文字颜色 */
+    & strong, & b {
+      color: var(--foreground);
+      font-weight: 700;
+    }
+    
+    /* 确保代码块文字可见 */
+    & code:not([class]) {
+      color: var(--foreground);
+      background-color: rgba(0, 0, 0, 0.1);
+    }
+    
+    @media (prefers-color-scheme: dark) {
+      & code:not([class]) {
+        background-color: rgba(255, 255, 255, 0.1);
+      }
+    }
   }
 }
