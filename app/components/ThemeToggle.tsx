@@ -10,12 +10,14 @@ export default function ThemeToggle() {
     const [mounted, setMounted] = useState(false);
 
     useEffect(() => setMounted(true), []);
-    if (!mounted) return null;
+    
+    // 未挂载时返回占位符，保持布局稳定
+    if (!mounted) return <div className="p-2 rounded-xl" style={{visibility:'hidden'}} />;
 
     return (
         <button
             onClick={() => setTheme(theme === "dark" ? "light" : "dark")}
-            className="p-2 rounded-xl bg-zinc-100 dark:bg-zinc-800 border border-zinc-200 dark:border-zinc-700 hover:scale-110 transition-transform"
+            className="p-2 rounded-xl bg-zinc-100 dark:bg-zinc-800 border border-zinc-200 dark:border-zinc-700 hover:scale-110 transition-all duration-200 cursor-pointer"
         >
             <motion.div
                 initial={false}
