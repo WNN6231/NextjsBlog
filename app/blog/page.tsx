@@ -32,7 +32,7 @@ export default function BlogListPage() {
         
         <div className="mb-10">
           <TextScramble className='font-sans text-3xl uppercase'>
-            {"Blog\n记录个人所思所想，聊以慰藉浮生。"}
+            {"小小博文，聊以慰藉浮生。"}
           </TextScramble>
         </div>
 
