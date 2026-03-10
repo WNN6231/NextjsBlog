@@ -12,7 +12,10 @@ export default async function BlogPostPage({
 }) {
   
   const { slug } = await params;
-  const post = getPostBySlug(slug);
+  const decodedSlug = decodeURIComponent(slug).normalize('NFC');
+  
+
+  const post = getPostBySlug(decodedSlug);
 
   if (!post) {
     notFound();
@@ -63,6 +66,7 @@ export default async function BlogPostPage({
           <ReactMarkdown 
             remarkPlugins={[remarkGfm]}
             components={{
+        
               p: ({ children }) => {
                 const isImage = React.Children.toArray(children).some((child) => {
                   return React.isValidElement(child) && (
@@ -71,10 +75,7 @@ export default async function BlogPostPage({
                   );
                 });
 
-                if (isImage) {
-                  return <>{children}</>;
-                }
-
+                if (isImage) return <>{children}</>;
                 return <p className="leading-7 mb-6">{children}</p>;
               },
 
