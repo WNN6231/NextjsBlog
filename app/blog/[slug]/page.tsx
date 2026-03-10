@@ -1,3 +1,4 @@
+import React from 'react';
 import { getPostBySlug } from '@/lib/markdown';
 import { notFound } from 'next/navigation';
 import ReactMarkdown from 'react-markdown';
@@ -62,16 +63,47 @@ export default async function BlogPostPage({
           <ReactMarkdown 
             remarkPlugins={[remarkGfm]}
             components={{
-              img: ({ node, ...props }) => (
-                <span className="block w-full flex justify-center my-8">
-                  <img
-                    {...props}
-                    alt={props.alt || "Blog Image"}
-                    className="rounded-lg max-h-[600px] object-contain bg-gray-100 dark:bg-gray-800/50"
-                    loading="lazy"
-                  />
-                </span>
-              ),
+              p: ({ children }) => {
+                const isImage = React.Children.toArray(children).some((child) => {
+                  return React.isValidElement(child) && (
+                    child.type === 'img' || 
+                    (typeof child.type === 'function' && (child.type as any).name === 'img')
+                  );
+                });
+
+                if (isImage) {
+                  return <>{children}</>;
+                }
+
+                return <p className="leading-7 mb-6">{children}</p>;
+              },
+
+              img: ({ node, ...props }) => {
+                const altParts = props.alt?.split('|') || [];
+
+                const descriptions = altParts.filter(part => {
+                  const isNumber = /^\d+$/.test(part.trim());
+                  return part.trim() !== '' && !isNumber;
+                });
+
+                const captionText = descriptions.length > 0 ? descriptions[0] : null;
+                
+                return (
+                  <figure className="my-8 flex flex-col items-center w-full">
+                    <img
+                      {...props}
+                      alt={captionText || "Blog Image"} 
+                      className="rounded-lg max-h-[600px] object-contain bg-gray-100 dark:bg-gray-800/50"
+                      loading="lazy"
+                    />
+                    {captionText && (
+                      <figcaption className="mt-3 text-center text-sm text-gray-500 dark:text-gray-400 italic font-medium">
+                        {captionText}
+                      </figcaption>
+                    )}
+                  </figure>
+                );
+              },
             }}
           >
             {post.content}
