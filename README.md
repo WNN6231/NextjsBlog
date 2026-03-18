@@ -37,11 +37,11 @@ npm run dev
 点击终端显示的http://localhost:3000查看博客内容。
 
 ## 📁 目录结构
-|app: 博客页面路由与逻辑。|  
-|public: 静态资源（图片、字体等）。|  
-|public/optimized: 经过 compress.js 处理后的优化图片。|  
-|lib: 公用工具函数与库配置。  |
-|compress.js: 自定义图片压缩工具。|
+|**app**| 博客页面路由与逻辑。|  
+|**public**| 静态资源（图片、字体等）。|  
+|**public/optimized**| 经过 compress.js 处理后的优化图片。|  
+|**lib**| 公用工具函数与库配置。  |
+|**compress.js**| 自定义图片压缩工具。|
 
 ---
 Made with ❤️ by WNN
