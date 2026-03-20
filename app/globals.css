@@ -48,7 +48,7 @@ html.dark {
 
 @layer utilities {
   .prose-custom {
-    @apply prose prose-zinc max-w-none text-[15px] md:text-base leading-8;
+    @apply prose prose-zinc max-w-none text-sm md:text-base leading-8;
     font-family: "Source Han Serif", "Noto Serif CJK", "Songti SC", Georgia, serif;
     
     --tw-prose-body: var(--foreground);

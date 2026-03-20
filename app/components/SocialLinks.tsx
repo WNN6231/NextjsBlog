@@ -12,7 +12,7 @@ export function SocialLinks () {
 
 
     return(
-        <div className="flex flex-wrap gap-x-6 gap-y-2 pt-2">
+        <div className="flex flex-wrap gap-x-8 gap-y-4 pt-2">
             {SocialLinks.map((link) => (
             <a 
                 key={link.name} 

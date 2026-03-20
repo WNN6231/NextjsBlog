@@ -38,11 +38,11 @@ export function TiltCard({
                     alt={imageAlt}
                     className='h-60 w-full object-cover'
                 />
-                <div className='p-2'>
-                    <h1 className='font-sans leading-snug text-zinc-950 dark:text-zinc-50'>
+                <div className='p-4'>
+                    <h1 className='font-sans leading-snug text-lg text-zinc-950 dark:text-zinc-50'>
                         {title}
                     </h1>
-                    <p className='text-zinc-700 dark:text-zinc-400'>{author}</p>
+                    <p className='text-base text-zinc-700 dark:text-zinc-400'>{author}</p>
                 </div>
             </div>
         </Tilt>

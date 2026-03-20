@@ -79,7 +79,7 @@ export default function FloatingNav() {
             href={item.link}
             data-active={isActive}
             className={`
-              relative z-10 px-4 py-2 text-sm font-medium transition-colors duration-300
+              relative z-10 px-2 md:px-4 py-2 text-xs md:text-sm font-medium transition-colors duration-300
               flex items-center justify-center min-w-[64px]
               ${
                 isActive
