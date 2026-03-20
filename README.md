@@ -43,7 +43,7 @@ npm run dev
 | **public** | 静态资源（图片、字体等）。|  
 | **public/optimized** | 经过 compress.js 处理后的优化图片。|  
 | **lib** | 公用工具函数与库配置。  |
-| **compress.js** | 自定义图片压缩工具。|
+| **scripts** | 脚本集成，内有compress压缩脚本和pulish发布脚本，利于开发者在Obisidian中一键执行pulish命令至博客仓库。|
 
 ---
 Made with ❤️ by WNN
