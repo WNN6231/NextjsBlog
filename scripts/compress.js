@@ -1,4 +1,3 @@
-
 const sharp = require('sharp');
 const fs = require('fs');
 const path = require('path');
@@ -29,6 +28,16 @@ const processDirectory = (dir) => {
                 console.error(`Error converting ${file.name}:`, err);
               } else {
                 console.log(`Successfully converted ${file.name} to ${outputFilePath}`);
+
+                // --- 新增功能：删除原图 ---
+                fs.unlink(fullPath, (unlinkErr) => {
+                  if (unlinkErr) {
+                    console.error(`Error deleting original file ${file.name}:`, unlinkErr);
+                  } else {
+                    console.log(`Successfully deleted original file: ${file.name}`);
+                  }
+                });
+                // -----------------------
               }
             });
         }
