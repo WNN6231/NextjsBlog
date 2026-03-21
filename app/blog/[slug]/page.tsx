@@ -45,7 +45,7 @@ export default async function BlogPostPage({
           <div className="flex items-center space-x-4">
             <div className="relative w-10 h-10 overflow-hidden rounded-full border border-gray-200 dark:border-gray-800">
               <Image 
-                src="/avatar.jpg"
+                src="/avatar.webp"
                 alt={author}
                 fill
                 className="object-cover"
