@@ -27,17 +27,19 @@ export function TiltCard({
         <Tilt
             rotationFactor={rotationFactor}
             isRevese={isRevese}
-            className={"w-full"}
+            className={`w-full ${className}`}
         >
             <div
                 style={{borderRadius: '12px'}}
                 className = 'flex w-full h-full flex-col overflow-hidden border border-zinc-950/10 bg-white dark:border-zinc-50/10 dark:bg-zinc-900'
             >
-                <img
-                    src={imageSrc}
-                    alt={imageAlt}
-                    className='h-60 w-full object-cover'
-                />
+                <div className='aspect-[16/9] w-full overflow-hidden'>
+                    <img
+                        src={imageSrc}
+                        alt={imageAlt}
+                        className='h-full w-full object-cover transition-transform duration-300 hover:scale-105'
+                    />
+                </div>
                 <div className='p-4'>
                     <h1 className='font-sans leading-snug text-lg text-zinc-950 dark:text-zinc-50'>
                         {title}
