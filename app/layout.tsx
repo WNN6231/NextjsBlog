@@ -58,11 +58,11 @@ export default function RootLayout({
             <nav className="sticky top-0 z-50 bg-white/70 backdrop-blur-md border-zinc-200 text-zinc-900 
             dark:bg-[#121212]/50 dark:border-white/10 dark:text-white flex justify-between items-center px-8 py-6 w-full text-sm">
               <div className="max-w-7xl mx-auto w-full flex justify-between items-center">
-                <span className="font-bold tracking-tighter text-lg">
+                <span className="hidden md:block font-bold tracking-tighter text-lg">
                   Wm1NlkN
                 </span>
-                <div className="text-zinc-500 hover:text-zinc-900 dark:hover:text-white cursor-pointer transition-colors">
-                  登录
+                <div className="hidden md:block text-zinc-500 hover:text-zinc-900 dark:hover:text-white cursor-pointer transition-colors">
+                  Hello
                 </div>
               </div>
             </nav>

@@ -56,37 +56,37 @@ export const CARDS = [
   {
     id: '1',
     image: '9e0047d8d587ab8029ba040d5ef43073395143382.webp',
-    title: <>『超かぐや姫！』<br />跨越8000年的爱恋</>,
+    title: <>『超时空辉夜姬！』<br />跨越8000年的爱恋</>,
     author: '山下清悟',
   },
   {
     id: '2',
     image: '20260220_022429.webp',
-    title: <>『リズと青い鸟』<br />我在人声鼎沸中望向你</>,
+    title: <>『利兹与青鸟』<br />我在人声鼎沸中望向你</>,
     author: '山田尚子',
   },
   {
     id: '3',
     image: '79bfe369a2fb7fc1d8e59df199f73bb9f90d1796.webp',
-    title: <> 『やはり俺の青春ラブコメはまちがっている』<br />我也想要真物</>,
+    title: <> 『我的青春恋爱物语果然有问题』<br />我也想要真物</>,
     author: '渡航',
   },
   {
     id: '4',
     image: 'guduyaogun.webp',
-    title: <>『ぼっち・ざ・ろっく！』<br />吉他与孤独与蓝色星球🎸</>,
+    title: <>『孤独摇滚！』<br />吉他与孤独与蓝色星球🎸</>,
     author: 'はまじあき',
   },
   {
     id: '5',
     image: 'mygo.webp',
-    title: <>『MyGO!!!!!』<br />这是属于，我们的歌啊😭</>,
+    title: <>『BanG Dream! It's MyGO!!!!!』<br />这是属于，我们的歌啊😭</>,
     author: 'BanG Dream!',
   },
   {
     id: '6',
     image: 'GBC2.webp',
-    title: <>『GIRLS BAND CRY』<br />一起对生活竖起中指吧！👌</>,
+    title: <>『GIRLS BAND CRY!』<br />一起对生活竖起中指吧！👌</>,
     author: 'TOEI ANIMATION',
   },
 ];
