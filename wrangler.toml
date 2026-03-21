@@ -1,1 +1,4 @@
+name = "nextjsblog"
 pages_build_output_dir = ".open-next"
+
+[vars]
