@@ -106,11 +106,12 @@ export default function AboutPage() {
             </h3>
             {/* 移动端字号降级，行高保持呼吸感 */}
             <p className="text-base md:text-xl leading-relaxed font-light text-zinc-300 space-y-4">
-              这不是将一生奉献给谁的故事。<br /><br />
-              人生的路不管走到哪里，<br className="md:hidden" />都只能是自己的路。<br /><br />
-              不管如何抉择，不论觉得这些有多好，<br className="md:hidden" />或者被多么沉重的事物攀附，<br /><br />
-              全部是我在活着的过程中得到的，<br /><br />
-              属于我的东西。
+              其实很早以前就想着写一个这样的博客了。<br /><br />
+              但是总是被各种事情搁置。<br /><br />
+              现在他终于面世了，万分感慨写博客期间发生的各种事情，<br /><br />
+              我大概一辈子忘不掉日日夜夜开发博客的时光了。<br /><br />
+              我是WNN，欢迎你踏入我的世界，<br /><br />
+              感谢你看我的博客。
             </p>
           </div>
         </div>
