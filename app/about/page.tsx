@@ -1,32 +1,31 @@
 'use client';
 
 import React from 'react';
-import { motion } from 'motion/react'; 
+import { motion } from 'framer-motion'; // 建议统一使用 framer-motion 
 import { TextShimmer } from '@/app/components/core/text-shimmer';
 import { InView } from '@/app/components/core/in-view'; 
 import { Cursor } from '@/app/components/core/cursor';
 import { SpinningTextCustomTransition } from '../components/SpinningTextCustomTransition';
-import { ImageComparisonSpring } from "../components/ImageComparisonSpring"
 
 export default function AboutPage() {
   return (
-    <main className="text-white">
-
-      <section className='relative flex h-screen w-full flex-col items-center justify-center snap-start'>
+    <main className="text-white bg-zinc-950 min-h-screen">
+      {/* Hero Section */}
+      <section className='relative flex h-[90vh] md:h-screen w-full flex-col items-center justify-center snap-start overflow-hidden'>
         <motion.div 
           initial={{ opacity: 0, scale: 0.9, y: 20 }}
           animate={{ opacity: 1, scale: 1, y: 0 }}
           transition={{ duration: 0.8, ease: "easeOut" }}
           className='z-10 w-full max-w-2xl px-6'
-        >
-        </motion.div>
+        />
 
         <motion.div 
           initial={{ opacity: 0, scale: 0.8 }}
           animate={{ opacity: 1, scale: 1 }}
           transition={{ delay: 0.5, duration: 1 }}
-          className='relative flex h-64 w-full items-center justify-center -mt-60'
+          className='relative flex h-64 w-full items-center justify-center'
         >
+          {/* 装饰方块：移动端缩小尺寸 */}
           <motion.div
             initial={{ rotate: 45 }}
             animate={{ 
@@ -39,11 +38,11 @@ export default function AboutPage() {
               repeat: Infinity, 
               ease: "easeInOut" 
             }}
-            className="absolute h-48 w-48 border border-zinc-500 bg-transparent shadow-[0_0_15px_rgba(113,113,122,0.1)]"
+            className="absolute h-32 w-32 md:h-48 md:w-48 border border-zinc-500 bg-transparent shadow-[0_0_15px_rgba(113,113,122,0.1)]"
           />
 
           <TextShimmer
-            className='z-10 text-sm font-medium uppercase tracking-[0.4em] '
+            className='z-10 text-xs md:text-sm font-medium uppercase tracking-[0.4em]'
             duration={1.2}
           >
             Scroll down
@@ -56,75 +55,73 @@ export default function AboutPage() {
           hidden: { opacity: 0, y: 50, filter: 'blur(8px)' },
           visible: { opacity: 1, y: 0, filter: 'blur(0px)' },
         }}
-        viewOptions={{ margin: '0px 0px -200px 0px' }}
+        viewOptions={{ margin: '0px 0px -100px 0px' }}
         transition={{ duration: 0.6, ease: 'easeOut' }}
       >
+        {/* 诗歌/引言区域 */}
         <div className='flex flex-col items-center justify-center px-6 text-center pb-20'>
-          <div className="flex flex-col items-center gap-10 mt-20"> 
-              
-              <h2 className='text-3xl tracking-[0.2em] font-sans text-zinc-400 dark:text-zinc-100 uppercase'>
+          <div className="flex flex-col items-center gap-6 md:gap-10 mt-10 md:mt-20"> 
+            <h2 className='text-xl md:text-3xl tracking-[0.2em] font-sans text-zinc-400 dark:text-zinc-100 uppercase'>
               The Silent Shadow
-              </h2>
+            </h2>
 
-              <div className='max-w-2xl text-3xl leading-loose text-zinc-400 font-light'>
-              "Between the desire and the spasm,<br />
-              Between the potency and the existence,<br />
+            {/* 调整移动端字号和行高，防止文字堆叠 */}
+            <div className='max-w-2xl text-lg md:text-3xl leading-[2.2] md:leading-loose text-zinc-400 font-light px-2'>
+              "Between the desire and the spasm,<br className="hidden md:block" />
+              Between the potency and the existence,<br className="hidden md:block" />
               Between the essence and the descent,<br />
               
-                <span className='relative inline-block px-2'>
-                  <Cursor
-                    attachToParent
-                    variants={{
-                      initial: { height: 0, opacity: 0, scale: 0.3 },
-                      animate: { height: 'auto', opacity: 1, scale: 1 },
-                      exit: { height: 0, opacity: 0, scale: 0.3 },
-                    }}
-                    transition={{
-                      type: 'spring',
-                      duration: 0.3,
-                      bounce: 0.1,
-                    }}
-                    className='overflow-hidden -translate-y-30'
-                    springConfig={{
-                      bounce: 0.01,
-                    }}
-                  >
-                    <img
-                      src='shadow.webp'
-                      alt='Christian Church, Eastern Europe'
-                      className='h-173 w-110.8'
-                    />
-                  </Cursor>
-                  <span className='font-medium text-zinc-900 dark:text-zinc-100 transition-colors cursor-default'>
-                    Falls the Shadow."
-                  </span>
+              <span className='relative inline-block px-1 md:px-2 group'>
+                <Cursor
+                  attachToParent
+                  variants={{
+                    initial: { height: 0, opacity: 0, scale: 0.3 },
+                    animate: { height: 'auto', opacity: 1, scale: 1 },
+                    exit: { height: 0, opacity: 0, scale: 0.3 },
+                  }}
+                  transition={{ type: 'spring', duration: 0.3, bounce: 0.1 }}
+                  // 移动端隐藏或缩小这个浮动图片，防止挡住文字
+                  className='overflow-hidden -translate-y-20 md:-translate-y-30 hidden md:block'
+                  springConfig={{ bounce: 0.01 }}
+                >
+                  <img
+                    src='shadow.webp'
+                    alt='Shadow'
+                    className='h-80 md:h-[173px] w-auto'
+                  />
+                </Cursor>
+                <span className='font-medium text-zinc-200 dark:text-zinc-100 transition-colors cursor-default'>
+                  Falls the Shadow."
                 </span>
-              </div>
+              </span>
+            </div>
           </div>
         </div>
 
-        {/* =============== 新增的个人介绍区块 =============== */}
-        <div className="flex w-full flex-col items-center justify-center px-46 pt-140 pb-80 text-center">
-          <div className="max-w-2xl">
-            <h3 className="mb-8 text-sm font-medium uppercase tracking-[0.4em] text-zinc-500">
+        {/* 个人介绍区块：核心修复点 */}
+        <div className="flex w-full flex-col items-center justify-center px-6 md:px-20 lg:px-46 py-20 md:py-40 text-center">
+          <div className="max-w-2xl w-full">
+            <h3 className="mb-6 md:mb-8 text-xs md:text-sm font-medium uppercase tracking-[0.3em] md:tracking-[0.4em] text-zinc-500">
               Something Else
             </h3>
-            <p className="text-xl leading-relaxed font-light text-zinc-300">
+            {/* 移动端字号降级，行高保持呼吸感 */}
+            <p className="text-base md:text-xl leading-relaxed font-light text-zinc-300 space-y-4">
               这不是将一生奉献给谁的故事。<br /><br />
-              人生的路不管走到哪里，都只能是自己的路。<br /><br />
-              不管如何抉择，不论觉得这些有多好，或者被多么沉重的事物攀附，<br /><br />
+              人生的路不管走到哪里，<br className="md:hidden" />都只能是自己的路。<br /><br />
+              不管如何抉择，不论觉得这些有多好，<br className="md:hidden" />或者被多么沉重的事物攀附，<br /><br />
               全部是我在活着的过程中得到的，<br /><br />
-              属于我的东西。<br />
+              属于我的东西。
             </p>
           </div>
         </div>
-        {/* ================================================== */}
 
-        <div className="w-full max-w-none px-0 pb-20 lg:max-w-8xl lg:mx-auto">
-          <SpinningTextCustomTransition />
+        {/* 底部组件适配 */}
+        <div className="w-full overflow-hidden pb-20">
+          <div className="max-w-screen-xl mx-auto px-4">
+            <SpinningTextCustomTransition />
+          </div>
         </div>
       </InView>
-      
     </main>
   );
 }
