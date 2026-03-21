@@ -33,7 +33,7 @@ node compress.js
 ### 3. 运行图片优化脚本
 在预撰写仓库中完成内容创作后(有两个Obisidian仓库，本项目以Obisidian作为CMS，一个Obisidian仓库是nextjs/blog/content目录，一个Obisidian仓库作为预撰写仓库)，运行此脚本可将预撰写仓库中的博文同步至发布仓库，并进行格式调整适应web页面。（此脚本的同步路径需要自己手动调整，文件绝对路径最佳）。
 ```bash
-node publish。jsm
+node publish.mjs
 ```
 
 ### 4.启动开发服务器
