@@ -87,7 +87,7 @@ export default function AboutPage() {
                   <img
                     src='shadow.webp'
                     alt='Shadow'
-                    className='h-80 md:h-[173px] w-auto'
+                    className='h-90 md:h-[500px] w-auto'
                   />
                 </Cursor>
                 <span className='font-medium text-zinc-200 dark:text-zinc-100 transition-colors cursor-default'>
@@ -101,18 +101,18 @@ export default function AboutPage() {
         {/* 个人介绍区块：核心修复点 */}
         <div className="flex w-full flex-col items-center justify-center px-6 md:px-20 lg:px-46 py-20 md:py-40 text-center">
           <div className="max-w-2xl w-full">
-            <h3 className="mb-6 md:mb-8 text-xs md:text-sm font-medium uppercase tracking-[0.3em] md:tracking-[0.4em] text-zinc-500">
-              Something Else
-            </h3>
             {/* 移动端字号降级，行高保持呼吸感 */}
             <p className="text-base md:text-xl leading-relaxed font-light text-zinc-300 space-y-4">
-              其实很早以前就想着写一个这样的博客。<br /><br />
-              但是总是被各种事情搁置。<br /><br />
-              现在他终于面世了，<br /><br />
-              万分感慨写博客期间发生的各种事情，<br /><br />
-              我大概一辈子忘不掉日夜开发博客的时光了。<br /><br />
-              我是WNN，欢迎你踏入我的世界，<br /><br />
-              谢谢你看我的博客。
+              飞光飞光，劝尔一杯酒。<br /><br />
+              吾不识青天高，黄地厚。<br /><br />
+              唯见月寒日暖，来煎人寿。<br /><br />
+              食熊则肥，食蛙则瘦。<br /><br />
+              天东有若木，下置衔烛龙。<br /><br />
+              吾将斩龙足，嚼龙肉，使之朝不得回，夜不得伏。<br /><br />
+              自然老者不死，少者不哭。<br /><br />
+              何为服黄金、吞白玉？<br /><br />
+              谁似任公子，云中骑碧驴？<br /><br />
+              刘彻茂陵多滞骨，嬴政梓棺费鲍鱼。<br /><br />
             </p>
           </div>
         </div>
