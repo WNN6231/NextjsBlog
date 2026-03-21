@@ -150,9 +150,10 @@ export default function HomePage() {
           <AnimatedCardBackgroundHover />
         </div>
 
-        <div>
+        <div className='hidden md:block'>
           <Sakana />
         </div>
+        
       </main>
     </div>
   );
