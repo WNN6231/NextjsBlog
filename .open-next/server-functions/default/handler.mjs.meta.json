@@ -3606,13 +3606,13 @@
       "imports": [],
       "format": "cjs"
     },
-    ".open-next/server-functions/default/.next/server/app/blog/page_client-reference-manifest.js": {
-      "bytes": 10402,
+    ".open-next/server-functions/default/.next/server/app/about/page_client-reference-manifest.js": {
+      "bytes": 9547,
       "imports": [],
       "format": "cjs"
     },
-    ".open-next/server-functions/default/.next/server/app/about/page_client-reference-manifest.js": {
-      "bytes": 9547,
+    ".open-next/server-functions/default/.next/server/app/blog/page_client-reference-manifest.js": {
+      "bytes": 10402,
       "imports": [],
       "format": "cjs"
     },
@@ -3665,14 +3665,14 @@
           "original": "C:\\Users\\WNN\\Desktop\\blog\\.open-next\\server-functions\\default\\.next\\server\\app\\photos\\page_client-reference-manifest.js"
         },
         {
-          "path": ".open-next/server-functions/default/.next/server/app/blog/page_client-reference-manifest.js",
-          "kind": "require-call",
-          "original": "C:\\Users\\WNN\\Desktop\\blog\\.open-next\\server-functions\\default\\.next\\server\\app\\blog\\page_client-reference-manifest.js"
-        },
-        {
           "path": ".open-next/server-functions/default/.next/server/app/about/page_client-reference-manifest.js",
           "kind": "require-call",
           "original": "C:\\Users\\WNN\\Desktop\\blog\\.open-next\\server-functions\\default\\.next\\server\\app\\about\\page_client-reference-manifest.js"
+        },
+        {
+          "path": ".open-next/server-functions/default/.next/server/app/blog/page_client-reference-manifest.js",
+          "kind": "require-call",
+          "original": "C:\\Users\\WNN\\Desktop\\blog\\.open-next\\server-functions\\default\\.next\\server\\app\\blog\\page_client-reference-manifest.js"
         },
         {
           "path": ".open-next/server-functions/default/.next/server/app/blog/[slug]/page_client-reference-manifest.js",
@@ -6622,11 +6622,11 @@
         ".open-next/server-functions/default/.next/server/app/photos/page_client-reference-manifest.js": {
           "bytesInOutput": 8948
         },
-        ".open-next/server-functions/default/.next/server/app/blog/page_client-reference-manifest.js": {
-          "bytesInOutput": 9905
-        },
         ".open-next/server-functions/default/.next/server/app/about/page_client-reference-manifest.js": {
           "bytesInOutput": 9099
+        },
+        ".open-next/server-functions/default/.next/server/app/blog/page_client-reference-manifest.js": {
+          "bytesInOutput": 9905
         },
         ".open-next/server-functions/default/.next/server/app/blog/[slug]/page_client-reference-manifest.js": {
           "bytesInOutput": 9144
