@@ -1,4 +1,4 @@
-import type { OpenNextConfig } from "@opennextjs/aws/types/open-next.js";
+import type { OpenNextConfig } from "@opennextjs/cloudflare";
 
 const config: OpenNextConfig = {
   default: {
@@ -6,11 +6,12 @@ const config: OpenNextConfig = {
       wrapper: "cloudflare-node",
       converter: "edge",
       proxyExternalRequest: "fetch",
-      incrementalCache: "dummy",
+      incrementalCache: "dummy", 
       tagCache: "dummy",
       queue: "dummy",
     },
   },
+  edgeExternals: ["node:crypto"],
   middleware: {
     external: true,
     override: {
