@@ -3,6 +3,7 @@ import path from 'path';
 import matter from 'gray-matter';
 import Link from 'next/link';
 import { TextScramble } from '../components/core/text-scramble';
+import { SubscribeDialog } from "../components/SubscribeDialog";
 
 export default function BlogListPage() {
   const postsDirectory = path.join(process.cwd(), 'content/posts');
@@ -30,10 +31,11 @@ export default function BlogListPage() {
     <div className="min-h-screen bg-background text-foreground transition-colors duration-300">
       <main className="max-w-[1000px] mx-auto px-6 pt-10 pb-20">
         
-        <div className="mb-10">
-          <TextScramble className='font-sans text-lg md:text-3xl uppercase'>
+        <div className="mb-10 flex flex-col gap-4 md:flex-row md:items-center md:justify-between">
+          <TextScramble className='font-sans text-xl md:text-3xl uppercase'>
             {"小小博文，聊以慰藉浮生。"}
           </TextScramble>
+          <SubscribeDialog />
         </div>
 
         <div className="flex flex-col gap-6">
