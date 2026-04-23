@@ -8,7 +8,7 @@ cover: /PostImages/go.webp
 readtime: 1 hour read
 ---
 
-![Go的吉祥物！](/PostImages/Go.webp)
+![Go的吉祥物！](/PostImages/go.webp)
 
 # 优势
 **极简单的部署方式** ，可直接编译成机器码、不依赖其他库、直接运行即可部署。
