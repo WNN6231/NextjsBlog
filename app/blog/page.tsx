@@ -31,7 +31,7 @@ export default function BlogListPage() {
       <main className="max-w-[1000px] mx-auto px-6 pt-10 pb-20">
         
         <div className="mb-10">
-          <TextScramble className='font-sans text-3xl uppercase'>
+          <TextScramble className='font-sans text-lg md:text-3xl uppercase'>
             {"小小博文，聊以慰藉浮生。"}
           </TextScramble>
         </div>

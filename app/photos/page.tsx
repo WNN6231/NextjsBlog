@@ -1,11 +1,10 @@
 'use client';
 import { InView } from '../components/core/in-view';
-import { motion } from 'framer-motion'; // 建议统一使用 framer-motion 路径
+import { motion } from 'framer-motion';
 import Image from 'next/image';
 
 export default function InViewImagesGrid() {
   return (
-    // 1. 移除 h-full，让内容自然延伸产生滚动条
     <div className='w-full '>
       
       <section className="flex h-screen w-full items-center justify-center">
