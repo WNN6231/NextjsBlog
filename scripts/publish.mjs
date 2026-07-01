@@ -1,12 +1,19 @@
 import fs from 'fs-extra';
 import path from 'path';
+import { fileURLToPath } from 'url';
 
 // --- 配置项 ---
-const DRAFT_VAULT_PATH = 'D:/OBISIDIAN/M1LK'; 
-const ATTACHMENTS_DIR = 'PictureSave'; 
-const PROD_CONTENT_PATH = 'C:/Users/WNN/Desktop/blog/content/posts'; 
-const PROD_PUBLIC_PATH = 'C:/Users/WNN/Desktop/blog/public/PostImages'; 
-const IMAGE_URL_PREFIX = '/PostImages'; 
+// 草稿库(预撰写 Obsidian 仓库)的绝对路径。换电脑时只需改这一处。
+// 也可通过环境变量覆盖：DRAFT_VAULT_PATH=/xxx node scripts/publish.mjs <file>
+const DRAFT_VAULT_PATH = process.env.DRAFT_VAULT_PATH || '/Users/wnn/Documents/obsidian/Obsidian_Sync';
+const ATTACHMENTS_DIR = 'PictureSave';
+
+// 发布目标路径根据本脚本位置自动推算(scripts/ 的上一级即项目根),换机/改文件夹名都无需再动。
+const __dirname = path.dirname(fileURLToPath(import.meta.url));
+const PROJECT_ROOT = path.resolve(__dirname, '..');
+const PROD_CONTENT_PATH = path.join(PROJECT_ROOT, 'content/posts');
+const PROD_PUBLIC_PATH = path.join(PROJECT_ROOT, 'public/PostImages');
+const IMAGE_URL_PREFIX = '/PostImages';
 const AUTHOR_NAME = 'Wm1NlkN';
 
 const filePath = process.argv[2];
