@@ -148,7 +148,7 @@ export default function InViewImagesGrid() {
                 className='mb-4 break-inside-avoid'
               >
                 <img
-                  src={imgSrc}
+                  src={`/${imgSrc}`}
                   alt={`Photos_${index}`}
                   className='w-full rounded-xl object-cover hover:scale-[1.02] transition-transform duration-500'
                 />
