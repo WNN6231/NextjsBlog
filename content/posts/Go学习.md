@@ -17,7 +17,7 @@ readtime: 1 hour read
 ```
 package main
 
-import (
+import
 	"fmt"
 	"time"
 )
@@ -34,7 +34,7 @@ func main(){
 }
 ```
 **强大的标准库**：runtime系统调度机制、高效的GC垃圾回收、丰富的标准库
-**简单易学**：25关键词、内嵌C语法支持、面向对象继承（继承、多态、封装）、跨平台
+**简单易学**：25个关键词、内嵌C语法支持、面向对象继承（继承、多态、封装）、跨平台
 # 强项
 1、**云计算基础设施领域**
 代表项目：docker、kubernetes、etcd、consul、cloudflare CDN、七牛云存储等。
@@ -47,7 +47,7 @@ func main(){
 # 缺点
 1. 包管理
 2. 无泛化类型
-3. 所有的Excepiton都用Error来处理
+3. 所有的Exception都用error来处理
 4. 对C的降级处理
 
 # 1. 从一个main函数初见Go语法
@@ -179,7 +179,7 @@ func main() {
 }
 ```
 
-# 4. Go中函数的多返回职三种写法
+# 4. Go中函数的多返回值三种写法
 ```
 package main
 
@@ -697,8 +697,8 @@ Output:
 {Golang zhang3}
 {Golang 777
 ```
-# 15. Go面对对象类的表示与封装
-![Go面对对象类的封装](/PostImages/Pasted%20image%2020260319210913.webp)
+# 15. Go面向对象类的表示与封装
+![Go面向对象类的封装](/PostImages/Pasted%20image%2020260319210913.webp)
 ```
 package main
 
@@ -741,8 +741,8 @@ Ad =  100
 Level =  1
 ```
 
-# 16. Go面对对象继承
-![Go面对对象类的继承](/PostImages/Pasted%20image%2020260319212624.webp)
+# 16. Go面向对象继承
+![Go面向对象类的继承](/PostImages/Pasted%20image%2020260319212624.webp)
 ```
 package main
 
@@ -813,8 +813,8 @@ name =  WNN
 sex =  real man
 level =  88
 ```
-# 17. Go面对对象多态的实现与基本要素
-![Go面对对象多态的实现](/PostImages/Pasted%20image%2020260320121706.webp)
+# 17. Go面向对象多态的实现与基本要素
+![Go面向对象多态的实现](/PostImages/Pasted%20image%2020260320121706.webp)
 ```
 package main
 
@@ -904,7 +904,7 @@ func myFunc(arg interface{}) {
 	fmt.Println("myFunc is called...")
 	fmt.Println(arg)
 
-	// interface{} 改如何区分 此时引用的底层数据类型到底是什么？
+	// interface{} 该如何区分 此时引用的底层数据类型到底是什么？
 
 	// 给 interface{}提供"类型断言"机制
 	value, ok := arg.(string)
@@ -1199,8 +1199,8 @@ M2空闲会从M1偷取协程
 
 **全局G队列**：work stealing机制的补充，从全局偷取。一旦M2本地队列无任何协程，若M1本地队列也无其他协程，则从全局队列取出协程，但是要经历解锁和加锁的过程
 ![全局偷取但要经历加解锁](/PostImages/Pasted%20image%2020260320172225.webp)
-# 24. 创建gorountine
-![利用Gorountine实现简易并发](/PostImages/Pasted%20image%2020260322144111.webp)
+# 24. 创建goroutine
+![利用goroutine实现简易并发](/PostImages/Pasted%20image%2020260322144111.webp)
 ```
 package main
 
@@ -1334,7 +1334,7 @@ channel具备**同步**的机制，在main go或者sub go执行到数据读取�
 ### 无缓冲的channel
 ![无缓冲channel示意](/PostImages/Pasted%20image%2020260322150021.webp)
 > 代码详情请看25.channel基本定义及使用，示例即为无缓冲channel实现方式
-### 有缓存的channel
+### 有缓冲的channel
 ![有缓冲channel示意](/PostImages/Pasted%20image%2020260322150232.webp)```
 ```
 package main
