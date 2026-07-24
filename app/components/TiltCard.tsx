@@ -89,4 +89,58 @@ export const CARDS = [
     title: <>『GIRLS BAND CRY!』<br />一起对生活竖起中指吧！👌</>,
     author: 'TOEI ANIMATION',
   },
+  {
+    id: '7',
+    image: 'andao.webp',
+    title: <>『安达与岛村』<br />Andachi 『与』 Shimamura</>,
+    author: '入間人間',
+  },
+  {
+    id: '8',
+    image: 'zhouci.webp',
+    title: <>『一周一次买下同班同学』<br />葉月……なんで泣くの？</>,
+    author: '羽田うさ',
+  },
+  {
+    id: '9',
+    image: 'yyly.webp',
+    title: <>『摇曳露营△』<br />ソロキャンは、自由だ</>,
+    author: 'あfろ',
+  },
+  {
+    id: '10',
+    image: 'smjt.webp',
+    title: <>『与你相恋到生命尽头』<br />きみが死ぬまで、恋をしたい</>,
+    author: 'あおの なち',
+  },
+  {
+    id: '11',
+    image: 'mudan.webp',
+    title: <>『上伊那牡丹，醉姿似百合』<br />寮長ってカワイイですね</>,
+    author: '塀',
+  },
+  {
+    id: '12',
+    image: 'frsn.webp',
+    title: <>『对我垂涎欲滴的非人少女』<br />私はあなたを喰べたい</>,
+    author: '苗川采',
+  },
+  {
+    id: '13',
+    image: 'dya.webp',
+    title: <>『毁掉一切，地狱再爱』<br />君から離れられないのは、私のほうだったんだ</>,
+    author: 'くわばらたもつ',
+  },
+  {
+    id: '14',
+    image: 'ygrj.webp',
+    title: <>『异国日记』<br />人間は人間のことを全部わかることはできない</>,
+    author: 'ヤマシタトモコ',
+  },
+  {
+    id: '15',
+    image: 'lrbx.webp',
+    title: <>『我怎么可能成为你的恋人，不行不行！（※不是不可能！？）』<br />恋人になれるわけないでしょ！</>,
+    author: '三上てれん',
+  },
 ];
