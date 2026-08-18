@@ -71,7 +71,9 @@ export default async function AnimeDetailPage({
       </div>
 
       <section className='mt-12 border-t border-zinc-950/10 pt-8 dark:border-zinc-50/10'>
-        <h2 className='text-lg font-medium text-zinc-500'>观后感</h2>
+        <h2 className='text-xl font-semibold leading-snug text-zinc-900 dark:text-zinc-100 md:text-2xl'>
+          {note?.meta.title ?? '观后感'}
+        </h2>
         {note?.meta.date && (
           <p className='mt-1 text-xs text-zinc-500/70'>{note.meta.date}</p>
         )}

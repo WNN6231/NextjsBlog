@@ -7,7 +7,7 @@ import { AnimatedGroup } from '@/app/components/core/animated-group';
 
 export const metadata: Metadata = {
   title: 'Anime | Wm1NlkN',
-  description: '一些打动我的动画作品，与写给它们的观后感。',
+  description: '一些情感罢了',
 };
 
 export default function AnimePage() {
@@ -18,10 +18,10 @@ export default function AnimePage() {
           as='h1'
           className='font-sans text-xl md:text-3xl uppercase tracking-wider'
         >
-          动画，片刻，凝视。
+          Animation、Comic、Game、Novel
         </TextScramble>
         <p className='mt-3 text-sm text-zinc-500 dark:text-zinc-400'>
-          一些打动我的作品，以及写给它们的字。
+          私は自分のこと嫌いだから、私の嫌いなものを好きって言う人のこと好きになれないでしょ
         </p>
       </header>
 

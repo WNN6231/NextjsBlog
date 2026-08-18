@@ -53,7 +53,7 @@ export function getPostBySlug(slug: string) {
 export interface AnimeNote {
   slug: string;
   content: string;
-  meta: { date?: string };
+  meta: { title?: string; date?: string };
 }
 
 const animeDirectory = path.join(process.cwd(), 'content/anime');
@@ -93,6 +93,10 @@ export function getAnimeBySlug(slug: string): AnimeNote | null {
   return {
     slug: realSlug,
     content: processedContent,
-    meta: { date },
+    meta: {
+      // 正文标题：写在 front matter 的 title 里，缺失时详情页回退到“观后感”
+      title: data.title ? String(data.title) : undefined,
+      date,
+    },
   };
 }
