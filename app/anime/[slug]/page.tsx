@@ -2,6 +2,9 @@ import { notFound } from 'next/navigation';
 import Link from 'next/link';
 import type { Metadata } from 'next';
 import { CARDS } from '@/app/components/TiltCardData';
+import ReactMarkdown from 'react-markdown';
+import remarkGfm from 'remark-gfm';
+import { getAnimeBySlug } from '@/lib/markdown';
 
 // 仅允许 generateStaticParams 预渲染的 slug，未知 slug 直接 404
 export const dynamicParams = false;
@@ -21,7 +24,7 @@ export async function generateMetadata({
     return { title: 'Not Found | Wm1NlkN' };
   }
   return {
-    title: `${card.plainTitle} · 观后感 | Wm1NlkN`,
+    title: `${card.plainTitle} | Wm1NlkN`,
     description: `${card.plainTitle} —— ${card.author}`,
   };
 }
@@ -36,6 +39,8 @@ export default async function AnimeDetailPage({
   if (!card) {
     notFound();
   }
+
+  const note = getAnimeBySlug(slug);
 
   return (
     <div className='mx-auto my-12 w-full max-w-4xl px-4 md:my-20'>
@@ -67,9 +72,27 @@ export default async function AnimeDetailPage({
 
       <section className='mt-12 border-t border-zinc-950/10 pt-8 dark:border-zinc-50/10'>
         <h2 className='text-lg font-medium text-zinc-500'>观后感</h2>
-        <p className='mt-4 text-sm leading-relaxed text-zinc-500 dark:text-zinc-400'>
-          （待补充 —— 我会在这里写下对这部作品的感受。）
-        </p>
+        {note?.meta.date && (
+          <p className='mt-1 text-xs text-zinc-500/70'>{note.meta.date}</p>
+        )}
+        {note ? (
+          <article className='prose-custom mt-4'>
+            <ReactMarkdown
+              remarkPlugins={[remarkGfm]}
+              components={{
+                img: ({ node, ...props }) => (
+                  <img {...props} loading='lazy' className='rounded-lg' />
+                ),
+              }}
+            >
+              {note.content}
+            </ReactMarkdown>
+          </article>
+        ) : (
+          <p className='mt-4 text-sm leading-relaxed text-zinc-500 dark:text-zinc-400'>
+            （待补充 —— 我会在这里写下对这部作品的感受。）
+          </p>
+        )}
       </section>
     </div>
   );
