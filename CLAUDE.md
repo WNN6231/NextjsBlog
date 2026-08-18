@@ -4,7 +4,7 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 ## Overview
 
-A personal blog built with **Next.js 16 (App Router)**, React 19, TypeScript, and Tailwind CSS v4. Content is authored in **Obsidian** (used as the CMS) as Markdown files and rendered as statically-generated pages. Deployed to **Cloudflare Pages** via OpenNext. UI text and comments are largely in Chinese.
+A personal blog built with **Next.js 16 (App Router)**, React 19, TypeScript, and Tailwind CSS v4. Content is authored in **Obsidian** (used as the CMS) as Markdown files and rendered as statically-generated pages. Deployed to **Vercel**. (OpenNext/Cloudflare Pages config is present but currently unused — see note under "Cloudflare deployment".) UI text and comments are largely in Chinese.
 
 ## Commands
 
@@ -21,6 +21,8 @@ node scripts/publish.mjs <path-to-obsidian-note.md>   # Sync a draft note into c
 There is no test suite configured.
 
 ### Cloudflare deployment
+> **Note:** Active deployment is on **Vercel**, not Cloudflare. The OpenNext/Cloudflare config below is kept for potential future use; as of now Cloudflare builds succeed but serve 404, so it is not used. The `.open-next` build output is gitignored (not tracked).
+
 OpenNext is configured (`open-next.config.ts`, `wrangler.toml`, output dir `.open-next`). Use the `opennextjs-cloudflare` / `wrangler` binaries in `node_modules/.bin` to build and deploy. `wrangler.toml` sets `pages_build_output_dir = ".open-next"` and enables `nodejs_compat`.
 
 ## Architecture
