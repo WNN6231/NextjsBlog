@@ -36,13 +36,15 @@ export function TiltCard({
                     <img
                         src={imageSrc}
                         alt={imageAlt}
+                        loading='lazy'
+                        decoding='async'
                         className='h-full w-full object-cover transition-transform duration-300 hover:scale-105'
                     />
                 </div>
                 <div className='p-4'>
-                    <h1 className='font-sans leading-snug text-lg text-zinc-950 dark:text-zinc-50'>
+                    <h2 className='font-sans leading-snug text-lg text-zinc-950 dark:text-zinc-50'>
                         {title}
-                    </h1>
+                    </h2>
                     <p className='text-base text-zinc-700 dark:text-zinc-400'>{author}</p>
                 </div>
             </div>
