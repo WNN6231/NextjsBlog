@@ -9,7 +9,7 @@ const navItems = [
   { name: "Home", link: "/" },
   { name: "Blog", link: "/blog" },
   { name: "Photos", link: "/photos" },
-  { name: "About", link: "/about" },
+  { name: "Anime", link: "/anime" },
 ];
 
 export default function FloatingNav() {

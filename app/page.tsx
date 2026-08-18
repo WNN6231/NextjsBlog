@@ -11,7 +11,6 @@ import { TextLoop } from './components/core/text-loop';
 import { Clock } from './components/Clock';
 import { SocialLinks } from './components/SocialLinks';
 import { JourenyItem } from './components/JourenyItem';
-import { TiltCard, CARDS } from './components/TiltCard';
 import Sakana from './components/Sakana';
 
 export default function HomePage() {
@@ -105,12 +104,6 @@ export default function HomePage() {
             <h2 className='text-lg font-medium opacity-50 mb-6'>居住地</h2>
             <MapCard />
           </aside>
-        </div>
-
-        <div className='my-16 md:my-32 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6'>
-          {CARDS.map((card) => (
-            <TiltCard key={card.id} imageSrc={card.image} title={card.title} author={card.author} />
-          ))}
         </div>
 
         <div className='mb-12'>

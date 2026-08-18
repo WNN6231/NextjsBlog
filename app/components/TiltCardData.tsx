@@ -1,0 +1,92 @@
+export const CARDS = [
+  {
+    id: '1',
+    image: '/9e0047d8d587ab8029ba040d5ef43073395143382.webp',
+    title: <>『超时空辉夜姬！』<br />跨越8000年的爱恋</>,
+    author: '山下清悟',
+  },
+  {
+    id: '2',
+    image: '/20260220_022429.webp',
+    title: <>『利兹与青鸟』<br />我在人声鼎沸中望向你</>,
+    author: '山田尚子',
+  },
+  {
+    id: '3',
+    image: '/79bfe369a2fb7fc1d8e59df199f73bb9f90d1796.webp',
+    title: <> 『我的青春恋爱物语果然有问题』<br />我也想要真物</>,
+    author: '渡航',
+  },
+  {
+    id: '4',
+    image: '/guduyaogun.webp',
+    title: <>『孤独摇滚！』<br />吉他与孤独与蓝色星球🎸</>,
+    author: 'はまじあき',
+  },
+  {
+    id: '5',
+    image: '/mygo.webp',
+    title: <>『BanG Dream! It&apos;s MyGO!!!!!』<br />这是属于，我们的歌啊😭</>,
+    author: 'BanG Dream!',
+  },
+  {
+    id: '6',
+    image: '/GBC2.webp',
+    title: <>『GIRLS BAND CRY!』<br />一起对生活竖起中指吧！👌</>,
+    author: 'TOEI ANIMATION',
+  },
+  {
+    id: '7',
+    image: '/andao.webp',
+    title: <>『安达与岛村』<br />Andachi 『与』 Shimamura</>,
+    author: '入間人間',
+  },
+  {
+    id: '8',
+    image: '/zhouci.webp',
+    title: <>『一周一次买下同班同学』<br />葉月……なんで泣くの？</>,
+    author: '羽田うさ',
+  },
+  {
+    id: '9',
+    image: '/yyly.webp',
+    title: <>『摇曳露营△』<br />ソロキャンは、自由だ</>,
+    author: 'あfろ',
+  },
+  {
+    id: '10',
+    image: '/smjt.webp',
+    title: <>『与你相恋到生命尽头』<br />きみが死ぬまで、恋をしたい</>,
+    author: 'あおの なち',
+  },
+  {
+    id: '11',
+    image: '/mudan.webp',
+    title: <>『上伊那牡丹，醉姿似百合』<br />寮長ってカワイイですね</>,
+    author: '塀',
+  },
+  {
+    id: '12',
+    image: '/frsn.webp',
+    title: <>『对我垂涎欲滴的非人少女』<br />私はあなたを喰べたい</>,
+    author: '苗川采',
+  },
+  {
+    id: '13',
+    image: '/dya.webp',
+    title: <>『毁掉一切，地狱再爱』<br />君から離れられないのは、私のほうだったんだ</>,
+    author: 'くわばらたもつ',
+  },
+  {
+    id: '14',
+    image: '/ygrj.webp',
+    title: <>『异国日记』<br />人間は人間のことを全部わかることはできない</>,
+    author: 'ヤマシタトモコ',
+  },
+  {
+    id: '15',
+    image: '/lrbx.webp',
+    title: <>『我怎么可能成为你的恋人，不行不行！（※不是不可能！？）』<br />恋人になれるわけないでしょ！</>,
+    author: '三上てれん',
+  },
+];
