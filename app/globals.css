@@ -32,7 +32,7 @@ html.dark {
   *, ::before, ::after {
     transition: none !important;
   }
-  
+
   ::selection,
   ::-moz-selection {
     transition: none !important;
@@ -50,10 +50,10 @@ html.dark {
   .prose-custom {
     @apply prose prose-zinc max-w-none text-sm md:text-base leading-8;
     font-family: "Source Han Serif", "Noto Serif CJK", "Songti SC", Georgia, serif;
-    
+
     --tw-prose-body: var(--foreground);
     --tw-prose-headings: var(--foreground);
-    --tw-prose-links: var(--foreground); 
+    --tw-prose-links: var(--foreground);
     --tw-prose-bold: var(--foreground);
     --tw-prose-counters: var(--foreground);
     --tw-prose-bullets: var(--foreground);
@@ -61,19 +61,19 @@ html.dark {
     --tw-prose-quotes: var(--foreground);
     --tw-prose-code: var(--foreground);
     --tw-prose-quote-borders: var(--nav-pill-border);
-    
+
     & strong, & b {
       color: var(--foreground);
       font-weight: 700;
     }
-    
+
     & pre code {
       background-color: transparent !important;
       padding: 0 !important;
       border-radius: 0 !important;
       color: inherit !important;
     }
-    
+
     & :not(pre) > code {
       color: var(--foreground);
       background-color: rgba(0, 0, 0, 0.08);
@@ -90,11 +90,24 @@ html.dark {
       background-color: rgba(255, 255, 255, 0.12);
       color: #ededed;
     }
-    
+
     @media (prefers-color-scheme: dark) {
       & code:not([class]) {
         background-color: rgba(255, 255, 255, 0.1);
       }
     }
   }
+}
+
+/*
+ * 去掉 @tailwindcss/typography 给 blockquote 自动加的装饰引号。
+ * 必须写在 @layer 之外：cascade layers 下，分层样式压不过 typography 插件
+ * 注入的未分层规则，写在 @layer utilities 里会被它覆盖。引号由正文自行手写。
+ */
+.prose-custom blockquote {
+  quotes: none;
+}
+.prose-custom blockquote p:first-of-type::before,
+.prose-custom blockquote p:last-of-type::after {
+  content: none;
 }
